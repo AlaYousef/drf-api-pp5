@@ -10,7 +10,7 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(
-        upload_to='images/', default='https://res.cloudinary.com/dko5fxoa0/image/upload/v1696276538/default_profile_vtdqai.jpg'
+        upload_to='images/', default='https://res.cloudinary.com/dko5fxoa0/image/upload/v1693907273/samples/default_profile_jr1ppf.jpg'
     )
 
     class Meta:
