@@ -6,14 +6,16 @@ from .models import Post
 from .serializers import PostSerializer
 from drf_api_pp5.permissions import IsOwnerOrReadOnly
 
+
 class PostList(APIView):
+    """
+    List posts or create a post if logged in
+    """
     serializer_class = PostSerializer
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
-    """
-    Get method to list all posts
-    """
+
     def get(self, request):
         posts = Post.objects.all()
         serializer = PostSerializer(
@@ -21,9 +23,6 @@ class PostList(APIView):
         )
         return Response(serializer.data)
 
-    """
-    Post method to create a post
-    """
     def post(self, request):
         serializer = PostSerializer(
             data=request.data, context={'request': request}
@@ -37,9 +36,13 @@ class PostList(APIView):
             serializer.errors, status=status.HTTP_400_BAD_REQUEST
         )
 
+
 class PostDetail(APIView):
-    serializer_class = PostSerializer
+    """
+    Retrieve a post and edit or delete it if you own it
+    """
     permission_classes = [IsOwnerOrReadOnly]
+    serializer_class = PostSerializer
 
     def get_object(self, pk):
         try:
@@ -48,6 +51,7 @@ class PostDetail(APIView):
             return post
         except Post.DoesNotExist:
             raise Http404
+
     def get(self, request, pk):
         post = self.get_object(pk)
         serializer = PostSerializer(
