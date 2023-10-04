@@ -3,6 +3,22 @@ from django.contrib.auth.models import User
 
 
 class Post(models.Model):
+    image_filter_choices = [
+        ('_1977', '1977'), 
+        ('brannan', 'Brannan'),
+        ('earlybird', 'Earlybird'), 
+        ('hudson', 'Hudson'),
+        ('inkwell', 'Inkwell'), 
+        ('lofi', 'Lo-Fi'),
+        ('kelvin', 'Kelvin'), 
+        ('normal', 'Normal'),
+        ('nashville', 'Nashville'), 
+        ('rise', 'Rise'),
+        ('toaster', 'Toaster'), 
+        ('valencia', 'Valencia'),
+        ('walden', 'Walden'), 
+        ('xpro2', 'X-pro II')
+]
     """
     Post model, related to 'owner', i.e. a User instance.
     Default image set so that we can always reference image.url.
@@ -15,6 +31,10 @@ class Post(models.Model):
     image = models.ImageField(
         upload_to='images/', default='../default_post_n292pi_bvjxee', blank=True
     )
+    image_filter = models.CharField(
+        max_length=32, choices=image_filter_choices, default='normal'
+    )
+
 
     class Meta:
         ordering = ['-created_at']
