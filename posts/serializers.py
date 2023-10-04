@@ -9,8 +9,8 @@ class PostSerializer(serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
     """
-     A rest framework validate method to validate 
-     the uploaded image (image field)
+    A rest framework validate method to validate 
+    the uploaded image (image field)
     """
     def validate_image(self, value):
         if value.size > 1024 * 1024 *2:
