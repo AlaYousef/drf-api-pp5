@@ -3,14 +3,14 @@ from rest_framework import serializers
 from bookmarks.models import Bookmark
 
 
-class LikeSerializer(serializers.ModelSerializer):
+class BookmarkSerializer(serializers.ModelSerializer):
     """
     Serializer for the Bookmark model
     """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
-        model = Like
+        model = Bookmark
         fields = ['id', 'created_at', 'owner', 'post']
 
     def create(self, validated_data):
