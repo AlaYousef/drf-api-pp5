@@ -35,7 +35,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-alayousef-drfapipp5-a1rp6y7wt8h.ws-eu105.gitpod.io',
-                'git.heroku.com/cooking-api-pp5.git']
+                'cooking-api-pp5-c09a661185b7.herokuapp.com']
 
 
 # Application definition
