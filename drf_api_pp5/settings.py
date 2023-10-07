@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import re
 from pathlib import Path
 import os
 import dj_database_url
@@ -35,7 +35,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-alayousef-drfapipp5-a1rp6y7wt8h.ws-eu105.gitpod.io',
-                'cooking-api-pp5-c09a661185b7.herokuapp.com']
+                os.environ.get('ALLOWED_HOST'),]
 
 
 # Application definition
@@ -113,10 +113,15 @@ if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN')
     ]
-else:
+
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(
+        r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE
+    ).group(0)
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$",
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
     ]
+
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'drf_api_pp5.urls'
