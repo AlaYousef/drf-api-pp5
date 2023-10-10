@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Follower(models.Model):
     """
     Follower model, related to 'owner' and 'followed'.
-    'owner' is a User that is following a User.
+    'owner' is a User that is following a other users.
     'followed' is a User that is followed by 'owner'.
     'unique_together' makes sure a user can't 'double follow' the same user.
     """

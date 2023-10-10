@@ -4,6 +4,7 @@ from drf_api_pp5.permissions import IsOwnerOrReadOnly
 from .models import Comment
 from .serializers import CommentSerializer, CommentDetailSerializer
 
+
 class CommentList(generics.ListCreateAPIView):
     """
     List / create a comment for logged in users.
@@ -14,7 +15,7 @@ class CommentList(generics.ListCreateAPIView):
 
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['post']
-    
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 

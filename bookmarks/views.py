@@ -15,6 +15,7 @@ class BookmarkList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class BookmarkDetail(generics.RetrieveDestroyAPIView):
     """
     Retrieve a Bookmark or delete it by id if you own it.
