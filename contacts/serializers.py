@@ -16,7 +16,6 @@ class ContactSerializer(serializers.ModelSerializer):
         """
         Returns a human readable time since the
         comment was created
-        eg. '2 days ago'
         """
         return naturaltime(obj.created_at)
 

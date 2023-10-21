@@ -63,10 +63,12 @@ INSTALLED_APPS = [
 
     'profiles',
     'posts',
+    'recipes',
     'comments',
     'likes',
     'bookmarks',
     'followers',
+    'contacts',
 ]
 
 SITE_ID = 1
