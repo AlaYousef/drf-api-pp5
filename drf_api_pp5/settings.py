@@ -64,7 +64,7 @@ INSTALLED_APPS = [
     'recipes',
     'liks',
     'saved',
-    'comments',
+    'comment',
     'followers',
     'contacts',
     

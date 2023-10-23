@@ -29,7 +29,7 @@ urlpatterns = [
     path('', include('recipes.urls')),
     path('', include('liks.urls')),
     path('', include('saved.urls')),
-    path('', include('comments.urls')),
+    path('', include('comment.urls')),
     path('', include('followers.urls')),
     path('', include('contacts.urls')),
    

@@ -13,9 +13,21 @@ class RecipeList(generics.ListCreateAPIView):
     """
     serializer_class = RecipeSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Recipe.objects.all()
-
-
+    queryset = Recipe.objects.annotate(
+        likes_count=Count('likes', distinct=True),
+        comments_count=Count('comment', distinct=True),
+        saved_count=Count('bookmarks', distinct=True),
+    ).order_by('-created_at')
+    filter_backends = [
+        filters.OrderingFilter
+    ]
+    ordering_fields = [
+        'likes_count',
+        'comments_count',
+        'saved_count',
+        'likes__created_at',
+        'bookmarks__created_at',
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -27,5 +39,9 @@ class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     serializer_class = RecipeSerializer
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Recipe.objects.all()
+    queryset = Recipe.objects.annotate(
+        likes_count=Count('likes', distinct=True),
+        comments_count=Count('comment', distinct=True),
+
+    ).order_by('-created_at')
        
