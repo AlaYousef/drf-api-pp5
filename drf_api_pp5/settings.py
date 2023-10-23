@@ -60,12 +60,10 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'corsheaders',
 
-
     'profiles',
-    'posts',
     'recipes',
+    'liks',
     'comments',
-    'likes',
     'bookmarks',
     'followers',
     'contacts',

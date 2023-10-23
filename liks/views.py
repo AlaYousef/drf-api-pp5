@@ -1,12 +1,12 @@
 from rest_framework import generics, permissions
 from drf_api_pp5.permissions import IsOwnerOrReadOnly
-from likes.models import Like
-from likes.serializers import LikeSerializer
+from liks.models import Like
+from liks.serializers import LikeSerializer
 
 
 class LikeList(generics.ListCreateAPIView):
     """
-    List / create a like for logged in users.
+    List likes or create a like if logged in.
     """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = LikeSerializer
