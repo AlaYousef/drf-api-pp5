@@ -3,9 +3,11 @@ from django.contrib.auth.models import User
 from recipes.models import Recipe
 
 
-class Bookmark(models.Model):
+class Save(models.Model):
     """
-    bookmark model, related to 'owner' and 'post'.
+    Save model, related to 'owner' and 'recipe post'.
+    'owner' is a User instance and 'recipe' is a Recipe instance.
+    'unique_together' makes sure a user can't like the same recipe post twice.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     recipe = models.ForeignKey(
@@ -15,9 +17,6 @@ class Bookmark(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        """
-        A user can't bookmark the same post twice.
-        """
         unique_together = ['owner', 'recipe']
 
     def __str__(self):

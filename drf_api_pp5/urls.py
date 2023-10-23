@@ -28,8 +28,8 @@ urlpatterns = [
     path('', include('profiles.urls')),
     path('', include('recipes.urls')),
     path('', include('liks.urls')),
+    path('', include('saved.urls')),
     path('', include('comments.urls')),
-    path('', include('bookmarks.urls')),
     path('', include('followers.urls')),
     path('', include('contacts.urls')),
    
