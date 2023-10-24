@@ -10,11 +10,12 @@
     + [Data models](#data-models)
       - [**User**](#--user--)
       - [**Profile**](#--profile--)
-      - [**Post**](#--post--)
+      - [**Recipe**](#--recipe--)
       - [**Like**](#--like--)
-      - [**Bookmark**](#--bookmark--)
+      - [**Saved**](#--saved--)
       - [**Comment**](#--comment--)
       - [**Follower**](#--follower--)
+      - [**Contacts**](#--contacts--)
   * [Technologies Used](#technologies-used)
     + [Languages & Frameworks](#languages-frameworks)
     + [Libraries](#libraries)
@@ -39,7 +40,7 @@ Cooking is intended to be a forum for discussion of cooking recipes, techniques 
 ### Data models
 The following entity relationship diagram was created to represent the custome models implemented for Cooking project:
 
-![Entity Relationship Diagram](documentation/readme_images/ERD_pp5.png)
+![Entity Relationship Diagram](documentation/readme_images/ER_diagram_pp5.png)
 
 #### **Profile Model**
 * Represents the user profile. Profile instance is created automatically on user registration. 
@@ -47,7 +48,7 @@ The following entity relationship diagram was created to represent the custome m
 * Owner field has one-to-one relationship with User id field.
 
 
-#### **Post Model**
+#### **Recipe Model**
 * The post model has the following fields: owner, title,content, created_at, updated_at, image and image_filter.
 * Owner filed is a ForeignKey for user id.
 
@@ -55,7 +56,7 @@ The following entity relationship diagram was created to represent the custome m
 * This model has the following fields: owner, post and created at.
 * Owner and post fields are ForeignKeys for user id and post id respectively. 
 
-#### **Bookmark Model**
+#### **Saved Model**
 * This model has the following fields: owner, post and created at.
 * Bookmark model created to save who has add a bookmark(owner) and which post the bookmark has been added.
 * Owner and post fields are ForeignKeys for user id and post id respectively. 
@@ -69,6 +70,11 @@ The following entity relationship diagram was created to represent the custome m
 * Owner and followed fields are ForeignKeys.
 * Owner is a user that is following other users (following maker).
 * Followed is a user that is followed by other users.
+
+#### **Contacts Model**
+* 1 
+* 2
+* 3
 
 
 ## Technologies Used
