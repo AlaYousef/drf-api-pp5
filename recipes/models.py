@@ -28,12 +28,12 @@ class Recipe(models.Model):
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    ingredients = models.TextField(blank=True)
-    steps = models.TextField(blank=True)
+    ingredients = models.TextField()
+    steps = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_post_n292pi_bvjxee', blank=True
+        upload_to='images/', default='../default_post_n292pi_bvjxee'
     )
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'
