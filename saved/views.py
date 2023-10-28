@@ -18,7 +18,7 @@ class SaveList(generics.ListCreateAPIView):
 
 class SaveDetail(generics.RetrieveDestroyAPIView):
     """
-    Retrieve a like or delete it by id if you own it.
+    Retrieve a bookamrk or delete it by id if you own it.
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = SaveSerializer
