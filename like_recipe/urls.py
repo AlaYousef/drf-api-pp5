@@ -1,5 +1,5 @@
 from django.urls import path
-from liks import views
+from like_recipe import views
 
 urlpatterns = [
     path('likes/', views.LikeList.as_view()),

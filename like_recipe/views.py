@@ -1,7 +1,10 @@
+from django.shortcuts import render
+
+# Create your views here.
 from rest_framework import generics, permissions
 from drf_api_pp5.permissions import IsOwnerOrReadOnly
-from liks.models import Like
-from liks.serializers import LikeSerializer
+from like_recipe.models import Like
+from like_recipe.serializers import LikeSerializer
 
 
 class LikeList(generics.ListCreateAPIView):

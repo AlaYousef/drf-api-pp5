@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from recipes.models import Recipe
-from liks.models import Like
+from like_recipe.models import Like
 from saved.models import Save
 
 class RecipeSerializer(serializers.ModelSerializer):  
@@ -13,6 +13,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     likes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
     saved_count = serializers.ReadOnlyField()
+    
 
 
     """
@@ -63,5 +64,5 @@ class RecipeSerializer(serializers.ModelSerializer):
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
             'name', 'ingredients', 'steps', 'image', 'image_filter',
-            'like_id','save_id','likes_count','comments_count','saved_count',
+            'like_id', 'save_id', 'likes_count', 'comments_count','saved_count',
         ]

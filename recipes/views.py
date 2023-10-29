@@ -20,7 +20,18 @@ class RecipeList(generics.ListCreateAPIView):
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
-        filters.SearchFilter
+        filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+    filterset_fields = [
+        # user feed
+        'owner__followed__owner__profile',
+        # user liked recipes
+        'likes__owner__profile',
+        # user bookmarks recipes
+        'bookmarks__owner__profile',
+        # user recipes
+        'owner__profile',
     ]
     search_fields = [
         'owner__username',
@@ -28,10 +39,9 @@ class RecipeList(generics.ListCreateAPIView):
     ]
     
     ordering_fields = [
-        'likes_count',
-        'comments_count',
+        
         'saved_count',
-        'likes__created_at',
+        
         'bookmarks__created_at',
     ]
 
