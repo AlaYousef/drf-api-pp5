@@ -1,0 +1,32 @@
+.Recipe {
+    background-color: #ffffff;
+
+    margin-bottom: 16px;
+  
+    border: 0.5px solid #2142b2;
+    box-shadow: 3px 3px 3px lightblue;
+    
+  }
+  .bold-text {
+    font-weight: bold;
+  }
+  .Recipe figure,
+  h5 {
+    margin: 0 0;
+  }
+  
+  .Heart {
+    color: #2142b2;
+  }
+  
+  .Heart:hover {
+    color: #f85032;
+  }
+  
+  .HeartOutline:hover {
+    color: #2142b2;
+  }
+  .CardImage {
+    max-height: 80vh;
+    max-width: 100%;
+  }

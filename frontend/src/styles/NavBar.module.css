@@ -1,0 +1,17 @@
+.NavBar {
+    background-color: #ffffff;
+    border: 0.5px solid #2142b2;
+    box-shadow: 3px 3px 3px lightblue;
+  }
+
+  .NavLink {
+    padding: 10px;
+    
+  }
+  .Active i {
+    color: #2142b2;
+  }
+  
+  .ProfileNavLink{
+    padding: 10px;
+  }

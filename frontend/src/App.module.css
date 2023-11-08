@@ -1,0 +1,81 @@
+.App {
+    font-family: 'Alegreya', serif;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+   
+}
+.Main {
+  padding-top: 85px;
+}
+.Content {
+  background-color:  #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid  #2142b2;
+  box-shadow: 5px 5px 5px  lightblue;
+  
+}
+
+.FillerImage {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+a {
+    color: #2142b2;
+    transition: color ease-in-out 0.3s;
+  }
+  
+a:hover {
+    text-decoration: none;
+    color: #2142b2;
+    text-shadow: 3px 3px 3px  #cdc9dc;
+}
+  
+input[type="file"] {
+  display: none;
+}
+
+i {
+  color: #cdc9dc;
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #2142b2;
+}
+
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

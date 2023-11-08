@@ -1,0 +1,12 @@
+.WordBreak {
+    word-break: break-all;
+  }
+  .Header {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #2142b2;
+  }
