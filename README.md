@@ -1,8 +1,4 @@
 
-
-
-
-
 # Healthy - Healthy cooking recipes community
 
 ![Responsive image](documentation/readme_images/responsive.png)<br>
@@ -50,8 +46,6 @@
 ## Introduction
 
 Healthy website is a social media platform for healthy cooking recipes. This social web app provides users with an opportunity to contact and share information about healthy cooking recipes. This social platform targets users who are interested in healthy cooking recipes. Each user has the ability to share a post with a recipe title, ingredients and recipe directions so others can apply it easily. Users are given the ability also to like, leave comments and bookmarks others recipes.
-
-T
 
 The fully deployed project can be accessed at [Here](https://cooking-pp5-f4e5b26840e2.herokuapp.com/)
 
@@ -406,11 +400,16 @@ Most Followed Profiles For Logged-in users
 ### Contact-us Page
  * Users have the ability to contact with the site admin to send any questions or suggestions by sending a message from the contact form.
 
-![contact us Page](documentation/readme_images/contact-form.png)<br><br>
+![contact us Page](documentation/readme_images/contact-form.png)<br>
 
 * After sending the form user will get a confirmation message with "Your message has been recieved..." and redirect to the home page.
 
-![contact us Page msg](documentation/readme_images/contact-msg.png)<br><br>
+![contact us Page msg](documentation/readme_images/contact-msg.png)<br>
+
+* Finally the user message arrives to admin, so the admin can contact the message sender by his email which was added after writing the message.
+
+
+![contacts message from addmin panel](documentation/readme_images/admin_panel_contacts.png)<br><br>
 
 
 
@@ -522,6 +521,9 @@ To clone and set up this project follow these steps:
 * How to add these notifications is from [DEV](https://dev.to/adyasha8105/react-notifications-33do).
 
 * The API models are inspired from [Code Institute: Django Rest Framework](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DRF+2021_T1/courseware/f775d54df4da44d18309888b3fe884f7/a146472df94c4691951c4f58ac43e30e/)
+
+* Bug number 6 solution resource is from [medium.com](https://bryantson.medium.com/solving-proxy-error-could-not-proxy-request-xxx-from-yyy-from-local-reactjs-app-to-nodejs-app-f28f3548afb9)
+
 
 ### Code
 

@@ -327,7 +327,7 @@ All files containing custom Python code were then validated using the [Code Inst
 
 - `like_recipe/views.py`: no errors found
     <details><summary>Screenshot</summary>
-        <img src="documentation/readme_images/views-likes.png">
+        <img src="documentation/readme_images/views_likeRecipe.png">
         <br>
     </details>
 - `like_recipe/urls.py`: no errors found
@@ -348,7 +348,7 @@ All files containing custom Python code were then validated using the [Code Inst
 
 - `saved/views.py`: no errors found
     <details><summary>Screenshot</summary>
-        <img src="documentation/readme_images/views-bookmarks.png">
+        <img src="documentation/readme_images/views_saved.png">
         <br>
     </details>
 - `saved/urls.py`: no errors found
@@ -358,12 +358,12 @@ All files containing custom Python code were then validated using the [Code Inst
     </details>
 - `saved/serializers.py`: no errors found
     <details><summary>Screenshot</summary>
-        <img src="documentation/readme_images/serializer-bookmarks.png">
+        <img src="documentation/readme_images/serializers-saved.png">
         <br>
     </details>
 - `saved/models.py`: no errors found
     <details><summary>Screenshot</summary>
-        <img src="documentation/readme_images/models-bookmarks.png">
+        <img src="documentation/readme_images/model_saved.png">
         <br>
     </details>
 
@@ -496,7 +496,7 @@ Th application was tested using Google Lighthouse in Chrome Developer Tools. All
 
 * 5. Bug: invalid host header react. Solution : Create .env.development.local file in frontend directory.
 
-* 6. Bug: Proxy error: Could not proxy request /recipes/?search= from 3000-alayousef-drfapipp5-bu5sfal23dw.ws-eu105.gitpod.io to //localhost:8000. 	Solution : 
+* 6. Bug: Proxy error: Could not proxy request /recipes/?search= from 3000-alayousef-drfapipp5-bu5sfal23dw.ws-eu105.gitpod.io to //localhost:8000. 	Solution : change the localhost to 127.0.0.1 in package.json
  <br>
 [Back to top](<#contents>)
 
