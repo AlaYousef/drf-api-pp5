@@ -9,7 +9,8 @@ from .serializers import RecipeSerializer
 class RecipeList(generics.ListCreateAPIView):
     """
     List / create a recipes if logged in
-    The perform_create method associates the recipe post with the logged in user.
+    The perform_create method associates the recipe post with
+    the logged in user.
     """
     serializer_class = RecipeSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -37,11 +38,11 @@ class RecipeList(generics.ListCreateAPIView):
         'owner__username',
         'name',
     ]
-    
+
     ordering_fields = [
-        
+
         'saved_count',
-        
+
         'bookmarks__created_at',
     ]
 
@@ -59,4 +60,3 @@ class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
         likes_count=Count('likes', distinct=True),
         comments_count=Count('comment', distinct=True),
     ).order_by('-created_at')
-       
