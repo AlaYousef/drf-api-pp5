@@ -18,13 +18,13 @@ const PopularProfiles = ({ mobile }) => {
   return (
     <Container
       className={`${appStyles.Content} ${
-        mobile && "d-lg-none text-center mb-3"
+        mobile && "d-lg-none text-center mb-3 my-2"
       }`}
     >
       {/* Check if the popularProfiles data loaded */}
       {popularProfiles.results.length ? (
         <>
-          <p className={styles.Header}>Most Followed Profiles</p>
+          <p className= {`${styles.Header} my-2`} >Most Followed Profiles</p>
            {/* Display popularProfiles on mobiles (if mobiles var, is true)*/}
           {mobile ? (
             <div className="d-flex justify-content-around">

@@ -51,9 +51,14 @@ function SignInForm() {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
+      // Displaying a success notification message after submitting the form 
+      NotificationManager.success(
+        "Signed in successfully ",
+        "Success!", 3000
+      );
       history.push("/");
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setErrors(err.response?.data);
     }
   };

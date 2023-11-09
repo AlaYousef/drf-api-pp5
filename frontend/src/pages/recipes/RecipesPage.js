@@ -57,7 +57,7 @@ function RecipesPage({ message, filter = "" }) {
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
+      <Col className="py-2 p-0 p-lg-2 my-2" lg={8}>
         <PopularProfiles mobile />
         {/* Search Bar filter*/} 
         <i className={`fas fa-search ${styles.SearchIcon}`} />

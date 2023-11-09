@@ -11,6 +11,7 @@ const NotFound = () => {
         src={NoResults}
         message={`Sorry, the page you're looking for doesn't exist`}
       />
+    
     </div>
   )
 }
