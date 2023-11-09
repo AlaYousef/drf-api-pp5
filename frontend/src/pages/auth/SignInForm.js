@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 //API
 import axios from "axios";
 //boostrap component
@@ -34,42 +35,36 @@ function SignInForm() {
     username: "",
     password: "",
   });
-
   const { username, password } = signInData;
 
   /* useState hook with an empty object to store and set errors. */
   const[errors, setErrors] = useState({
   });
-
   const history = useHistory();
-
-  // Handling inputs changes 
-  const handleChange = (event) => {
-    setSignInData({
-        ...signInData,
-        [event.target.name]: event.target.value
-    })
-}
 
   // handling submitting (post all signin data to the api and redirect to home page)
   const handleSubmit = async (event) => {
-
     /* preventDefault event so that the page doesn’t refresh. */
     event.preventDefault();
-    try{
-        const {data} = await axios.post('/dj-rest-auth/login/', signInData);
-        setCurrentUser(data.user);
-        // Displaying a success notification message after submitting the form 
-        NotificationManager.success(
-          "Signed in successfully ",
-          "Success!", 3000
-        );
-        history.goBack();
-    }catch(err){
-        /* Errors conditional chaining */
-        setErrors(err.response?.data);
+
+    try {
+      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      setCurrentUser(data.user);
+      setTokenTimestamp(data);
+      history.push("/");
+    } catch (err) {
+      console.log(err);
+      setErrors(err.response?.data);
     }
-}
+  };
+// Handling inputs changes 
+const handleChange = (event) => {
+  setSignInData({
+      ...signInData,
+      [event.target.name]: event.target.value
+  });
+};
+
   // Form TextFields
   return (
     <Row className={styles.Row}>

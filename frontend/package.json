@@ -43,6 +43,9 @@
       "last 1 safari version"
     ]
   },
+  "client": {
+   "webSocketURL": { "hostname": "undefined", "pathname": "undefined", "port": "undefined" }
+  },
   "proxy": "http://127.0.0.1:8000/",
   "secure": false
 }
