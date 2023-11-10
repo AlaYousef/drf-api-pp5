@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react'
 //React boostrap component
 import { Card, Media, OverlayTrigger, Tooltip} from "react-bootstrap";
 //styles css
@@ -41,15 +42,13 @@ const Recipe = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
-  const [show, setShow] = useState(false);
-    const [message, setMessage] = useState("");
-    const [type, setType] = useState("")
-    const handleShow = () => {
-        setShow(true);
-        setMessage(`Are you sure you want to delete ${name}?`);
-        setType("event");
-    };
+    const [show, setShow] = useState(false);  
+    
     const handleClose = () => setShow(false);
+    const handleShow = () => {
+      setShow(true);
+      
+    };
 
   //handling recipe editing
   const handleEdit = () => {
@@ -58,18 +57,17 @@ const Recipe = (props) => {
   //handling recipe deletion
   const handleDelete = async () => {
     try {
-      // Send a request to delete a post by its ID
-      await axiosReq.delete(`/recipes/${id}/`);
-      history.push(`/`);
-      NotificationManager.info("Recipe Deleted");
-    } catch (err) {
-        console.log(err);
-      NotificationManager.error(
-        "There was an issue deleting the recipe",
-        "Error"
+      await axiosRes.delete(`/recipes/${id}/`);
+      NotificationManager.success(
+        "Recipe deleted successfully",
+        "Success!", 3000
       );
+      history.goBack();
+    } catch (err) {
+      console.log(err);
     }
   };
+ 
   //handling recipe like
   const handleLike = async () => {
     try {
@@ -149,7 +147,7 @@ const Recipe = (props) => {
             {is_owner && recipePage && (
               <MoreDropdown
                 handleEdit={handleEdit}
-                handleDelete={handleDelete}
+                handleDelete={handleShow}
               />
             )}
           </div>
@@ -228,8 +226,10 @@ const Recipe = (props) => {
                 {steps}</Card.Text>}
             </Card.Body>
       </Card>
-     <MessageBox showModal={show} handleClose = {handleClose} handleDelete = {handleDelete} type={type} message={message} />
-     </>
+      <MessageBox show={show} handleClose={handleClose} 
+       handleDelete = {handleDelete} />
+     
+    </>
   );
 };
 

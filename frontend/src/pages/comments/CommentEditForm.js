@@ -39,7 +39,10 @@ function CommentEditForm(props) {
         }),
       }));
       setShowEditForm(false);
-      NotificationManager.info("Comment edited");
+      NotificationManager.success(
+        "Your Comment Edited successfully",
+        "Success!", 3000
+      );
     } catch (err) {
       //console.log(err);
     }
