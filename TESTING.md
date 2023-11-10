@@ -100,8 +100,10 @@ Back to [README.md](README.md)<br>
 | **Recipe Dropdown Menu**| Visible | Visible only for authenticated and recipe owner | Pass      |
 | Recipe Dropdown Menu| Click | dropdown menu with edit and delete icons will displayed | Pass      |
 | Recipe Dropdown Menu (Delete Icon)| Hover | Color changed to blue | Pass      |
-| Recipe Dropdown Menu (Delete Icon)| Click | Recipe deleted | Pass      |
-| Recipe Dropdown Menu (Delete Icon)| Click | A success message "Recipe deleted successfully" will displayed | Pass      |
+| Recipe Dropdown Menu (Delete Icon)| Click | Message Box displyed with two options _close_ and  _Delete_ | Pass      |
+| Recipe Dropdown Menu (Delete Icon) / Close Button| Click | Close the message box | Pass      |
+| Recipe Dropdown Menu (Delete Icon) / Delete Button| Click | Recipe deleted and  success message "Recipe deleted successfully" will be shown | Pass      |
+| Recipe Dropdown Menu (Delete Icon)| Delete Button | Users redirect to the previouse page | Pass      |
 | Recipe Dropdown Menu (Edit Icon)| Hover | Color changed to blue | Pass      |
 | Recipe Dropdown Menu (Edit Icon)| Click | Redirect to edit recipe form filled with previous recipe data, add/edit and delete this data  | Pass      |
 | Recipe Dropdown Menu (Edit Icon/Save Button)| Click Save | All text fields validated and checked for errors | Pass      |

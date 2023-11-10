@@ -414,7 +414,10 @@ Most Followed Profiles For Logged-in users
 * The dropDown menu has two option, one for editing to edit the recipe and the other for deleting to delete the recipe.
 ![Recipe dropdown menu msg](documentation/readme_images/recipe-dropdown.png)<br>
 
-* When the user click on delete icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/trash-can.svg" width="15" height="15"> the recipe will be deleted with a confirmation message " Recipe deleted successfully", and the user will be redirected to the previous page. 
+* When the user click on delete icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/trash-can.svg" width="15" height="15"> a confirmation message box will displyaed for ensuring the user for recipe deletion.
+![Recipe dropdown delete box](documentation/readme_images/deleteConfirmation.png)<br>
+
+* The recipe will be deleted with a confirmation message " Recipe deleted successfully", when user click on _Delete_ button and the user will be redirected to the previous page. 
 ![Recipe dropdown delete msg](documentation/readme_images/recipe-delete-msg.png)<br>
 
 * When the user click on edit icon. User will be redirected to edit recipe form that has the recipe information so that users cad edit it and click save button.  
@@ -772,6 +775,8 @@ To clone and set up this project follow these steps:
 * Notification messages inspired from this application [worth-a-trip](https://worth-a-trip-drf-40e2fa952827.herokuapp.com/)
 
 * How to add these notifications is from [DEV](https://dev.to/adyasha8105/react-notifications-33do).
+
+* Recipe delete Confirmation message box idea inspired from this [repository](https://github.com/quiltingcode/happening-react-frontend).
 
 * The API models are inspired from [Code Institute: Django Rest Framework](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DRF+2021_T1/courseware/f775d54df4da44d18309888b3fe884f7/a146472df94c4691951c4f58ac43e30e/)
 
