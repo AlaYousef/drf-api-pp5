@@ -497,7 +497,17 @@ Th application was tested using Google Lighthouse in Chrome Developer Tools. All
 * 5. Bug: invalid host header react. Solution : Create .env.development.local file in frontend directory.
 
 * 6. Bug: Proxy error: Could not proxy request /recipes/?search= from 3000-alayousef-drfapipp5-bu5sfal23dw.ws-eu105.gitpod.io to //localhost:8000. 	Solution : change the localhost to 127.0.0.1 in package.json
+
+* 7. Bug: Unchecked runtime.lastError: The message port closed before a response was received.
+Solution: Disable Norton Safe Web extension for chrome. 
+
+* 8. Bug: Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'username').
+Solution is adding (import jwtDecode from "jwt-decode") in utils.js. 
  <br>
+
+ ### UnResolved
+ * 1. Bug: WebSocketClient.js:13 WebSocket connection to 'wss://3000-alayousef-drfapipp5-bu5sfal23dw.ws-eu106.gitpod.io:3000/ws' failed. I could't fix this error and I have contacted tutor support and said that can ignored and will not affects my marks.
+ 
 [Back to top](<#contents>)
 
 

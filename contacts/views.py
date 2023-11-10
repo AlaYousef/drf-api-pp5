@@ -18,7 +18,7 @@ class ContactList(generics.ListCreateAPIView):
 
 class ContactDetail(generics.RetrieveDestroyAPIView):
     """
-    Retrieve a contact message / update or delete it.
+    Retrieve a contact message  or delete it.
     """
     permission_classes = [permissions.IsAdminUser]
     serializer_class = ContactSerializer

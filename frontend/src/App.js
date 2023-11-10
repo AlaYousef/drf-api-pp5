@@ -18,6 +18,7 @@ import NotFound from "./components/NotFound";
 import ContactCreateForm from "./pages/contacts/ContactCreateForm";
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer } from 'react-notifications';
+import RecipeDelete from "./pages/recipes/RecipeDelete";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -49,13 +50,14 @@ function App() {
               <Route exact path="/recipes/create" render={() => <RecipeCreateForm />} />
               <Route exact path="/recipes/:id" render={() => <RecipePage />} />
               <Route exact path="/recipes/:id/edit" render={() => <RecipeEditForm />} />
+              <Route exact path="/recipes/:id/delete" render={() => <RecipeDelete />} />
+              
               <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
               <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
               <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
               <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
               <Route exact path="/contacts" render={() => <ContactCreateForm />} />
 
-              
               <Route render={() => <NotFound />} />
             </Switch>
           </Container>

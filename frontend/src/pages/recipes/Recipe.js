@@ -15,6 +15,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 //Notifications
 import { NotificationManager } from 'react-notifications';
+import MessageBox from "../../components/MessageBox";
 
 //Destrucure props obj
 const Recipe = (props) => {
@@ -40,6 +41,16 @@ const Recipe = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  const [show, setShow] = useState(false);
+    const [message, setMessage] = useState("");
+    const [type, setType] = useState("")
+    const handleShow = () => {
+        setShow(true);
+        setMessage(`Are you sure you want to delete ${name}?`);
+        setType("event");
+    };
+    const handleClose = () => setShow(false);
+
   //handling recipe editing
   const handleEdit = () => {
     history.push(`/recipes/${id}/edit`);
@@ -47,14 +58,16 @@ const Recipe = (props) => {
   //handling recipe deletion
   const handleDelete = async () => {
     try {
-      await axiosRes.delete(`/recipes/${id}/`);
-      NotificationManager.success(
-        "Recipe deleted successfully",
-        "Success!", 3000
-      );
-      history.goBack();
+      // Send a request to delete a post by its ID
+      await axiosReq.delete(`/recipes/${id}/`);
+      history.push(`/`);
+      NotificationManager.info("Recipe Deleted");
     } catch (err) {
-      //console.log(err);
+        console.log(err);
+      NotificationManager.error(
+        "There was an issue deleting the recipe",
+        "Error"
+      );
     }
   };
   //handling recipe like
@@ -123,6 +136,7 @@ const Recipe = (props) => {
     }
   };
   return (
+    <>
       <Card className={`${styles.Recipe}`}>
         <Card.Body>
           <Media className="align-items-center justify-content-between">
@@ -214,7 +228,8 @@ const Recipe = (props) => {
                 {steps}</Card.Text>}
             </Card.Body>
       </Card>
-    
+     <MessageBox showModal={show} handleClose = {handleClose} handleDelete = {handleDelete} type={type} message={message} />
+     </>
   );
 };
 

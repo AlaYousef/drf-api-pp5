@@ -12,16 +12,17 @@
         * [Colours](#colours)
         * [Fonts](#fonts)
         * [Wireframes](#wireframes)
-    * [Database](#database)
-        * [Data models](#data-models)
-            - [**User**](#--user--)
-            - [**Profile**](#--profile--)
-            - [**Recipe**](#--recipe--)
-            - [**Like_Recipe**](#--like_recipe--)
-            - [**Saved**](#--saved--)
-            - [**Comment**](#--comment--)
-            - [**Follower**](#--follower--)
-            - [**Contacts**](#--contacts--)
+* [Database](#database)
+    * [Data models](#data-models)
+        - [**User**](#--user--)
+        - [**Profile**](#--profile--)
+        - [**Recipe**](#--recipe--)
+        - [**Like_Recipe**](#--like_recipe--)
+        - [**Saved**](#--saved--)
+        - [**Comment**](#--comment--)
+        - [**Follower**](#--follower--)
+        - [**Contacts**](#--contacts--)
+* [API End Points](#api-end-points)
 * [Agile Methodology](#agile-methodology)
 * [Features](#features)
     * [Home Page](#home-page) 
@@ -31,11 +32,16 @@
     * [Bookmarked Page](#bookmared-page)
     * [Profile Page](#Profile-page)
     * [Contact-us Page](#contact-us-page)
+    * [404 Error Page](#404-error-page)
+    * [Future Features](#future_features)
+    * [Reusable React Components](#reusable-react-components)
 * [Full Testing](#full-testing)
 * [Technologies Used](#technologies-used)
     * [Languages](#languages)
     * [Frameworks and Software](#frameworks-and-software)
 * [Deployment](#deployment)
+    * [Deployment](#deployment)
+    * [Deployment Backend](#deployment-backend)
     * [Forking this Project](#forking-this-project)
     * [Cloning this Project](#cloning-this-project)
 * [Credits](#credits)
@@ -218,6 +224,104 @@ The following entity relationship diagram was created to represent the custome m
 * The admin just has the ability to read/delete this message.
 
 
+## API End Points
+* The API end points that accepts requests and sends back responses implemented as:
+
+**Profiles**
+1. Endpoint: /profiles/
+
+Methods:
+* POST - Used to create user profile.
+* GET - Used to get a list of profiles.
+
+2. Endpoint: /posts/<int:pk>/
+
+Methods:
+* GET - Get a single profile.
+* DELETE - Used to delete a profile.
+
+
+**Recipes**
+1. Endpoint: /recipes/
+
+Methods Used:
+* POST - Used to create a recipe post.
+* GET - Used to retrieve a list of recipes.
+
+2. Endpoint: /recipes/<int:pk>/
+
+Methods:
+* GET - Used to view single and specific recipe post.
+* PUT - Used to edit a recipe post.
+* DELETE - Used to delete an recipe post.
+
+**Profiles**
+1. Endpoint: /profiles/
+
+Methods:
+* POST - Used to create user profile.
+* GET - Used to get a list of profiles.
+
+2. Endpoint: /profiles/<int:pk>/
+
+Methods:
+* GET - Get a single profile.
+* DELETE - Used to delete a profile.
+
+**Contacts**
+1. Endpoint: /contacts/
+
+Methods:
+* POST - Used to create contact request.
+* GET - Used to get a list of contacts requests.
+
+2. Endpoint: /contacts/<int:pk>/
+
+Methods:
+* GET - Get a single contact request.
+* DELETE - Used to delete a contact request.
+
+**Bookmarks**
+1. Endpoint: /bookmarks/
+
+Methods:
+* POST - Used to create bookmark (save) request.
+* GET - Used to get a list of bookmarks requests.
+
+2. Endpoint: /bookmarks/<int:pk>/
+
+Methods:
+* GET - Get a single bookmark request.
+* DELETE - Used to delete (toggle) a bookmark request.
+
+**Likes**
+1. Endpoint: /likes/
+
+Methods:
+* POST - Used to create like request.
+* GET - Used to get a list of likes.
+
+2. Endpoint: /likes/<int:pk>/
+
+Methods:
+* GET - Get a single like request.
+* DELETE - Used to delete (toggle) a like request.
+
+**comments**
+1. Endpoint: /comments/
+
+Methods:
+* POST - Used to create comment.
+* GET - Used to get a list of comments.
+
+2. Endpoint: /comments/<int:pk>/
+
+Methods:
+* GET - Get a single comment.
+* PUT - Used to edit a comment.
+* DELETE - Used to delete comment.
+
+ 
 ## Agile Methodology
 The project was developed using Agile methodology. Product backlog is detailed into three levels:<br>
 * Epics which is a large quantities of related work, which were five epics for the project. Each of them has a list of features.
@@ -303,17 +407,17 @@ Most Followed Profiles For Logged-in users
 * If users leave a field blank, an error message will displayed to alert users to enter fill out the form before submitting.
 ![Recipe Form Error](documentation/readme_images/recipe-form-error-msg.png)<br>
 
-* After filling the form correctly and click on _create_ button, the recipe post will vreated and the user will get a confirmation message "Recipe created successfully" and redirected to the recipe page. 
+* After filling the form correctly and click on _create_ button, the recipe post will created and the user will get a confirmation message "Recipe created successfully" and redirected to the recipe page. 
 ![Recipe created msg](documentation/readme_images/recipe-created-msg.png)<br>
 
 * Each recipe has a dropdown menu which displayed just for the recipe owner.
-* The dropDown menu has two option, one for editing to edit the recipe amd the other for deleting to delete the recipe.
+* The dropDown menu has two option, one for editing to edit the recipe and the other for deleting to delete the recipe.
 ![Recipe dropdown menu msg](documentation/readme_images/recipe-dropdown.png)<br>
 
 * When the user click on delete icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/trash-can.svg" width="15" height="15"> the recipe will be deleted with a confirmation message " Recipe deleted successfully", and the user will be redirected to the previous page. 
 ![Recipe dropdown delete msg](documentation/readme_images/recipe-delete-msg.png)<br>
 
-* When the user click on edit icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svg/edit-light.svg" width="15" height="15">. User will be redirected to edit recipe form that has the recipe information so that users cad edit it and click save button.  
+* When the user click on edit icon. User will be redirected to edit recipe form that has the recipe information so that users cad edit it and click save button.  
 ![Recipe dropdown edit form](documentation/readme_images/recipe-edit-form.png)<br>
 
 * The user will get a confirmation message with "Recipe updated successfully" after editing ad redirect to the recipe details page.  
@@ -408,11 +512,38 @@ Most Followed Profiles For Logged-in users
 
 * Finally the user message arrives to admin, so the admin can contact the message sender by his email which was added after writing the message.
 
-
 ![contacts message from addmin panel](documentation/readme_images/admin_panel_contacts.png)<br><br>
 
 
 
+
+### 404 Error Page 
+* A 404 Error Page has been implemented to guiding the user back to the site's home page in cases where the user enters an incorrect URL. 
+
+![404 Error Page](documentation/readme_images/404.png) 
+<br><br>
+
+### Reusable React Components
+* I have reuse in my project some components which I learned about and applied through Moments walkthrough project which are: 
+1. Three Dots Dropdown Menu
+* The MoreDropdown component provides a dropdown menu represented by the three dots ```...``` vertically. Used to add more functionality and provide the ability to users to edit and delete their recipes posts and comments, by adding _Edit_ and _Delete_ icons in this menu.
+* And used in profile to handle profiles actions like _edit profile_, _change username_ and _change password_ options.
+
+2. Avatar
+* The Avatar component is used to display users avatars with a high degree in a flexible and reusable way.
+
+3. Asset
+* The Asset.js is a reusable component that is used to render the loading spinner utilised throughout the application. 
+
+4. React Infinite Scroll
+* Used to load more contents instead of pagenation that can be somewhat annoying to users.
+
+
+### Future Features
+* The future features that I would like to implement are :
+1. Allow users to share a recipe post with their own followers by clicking on share icon.
+2. Notify users when someone other like, comment or starting to follow.
+3. Add sommernote to create recipes form fields.
 
 ## Full Testing
 The testing documentation can be found at [TESTING.md](TESTING.md)
@@ -478,71 +609,11 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 3. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
 
-The live link to the 'Yummy' site on Heroku can be found [here](https://cooking-pp5-f4e5b26840e2.herokuapp.com/). And the Github repository can be found [here](https://github.com/AlaYousef/portfolio-project5).
+The live link to the 'Healthy' site on Heroku can be found [here](https://cooking-pp5-f4e5b26840e2.herokuapp.com/). And the Github repository can be found [here](https://github.com/AlaYousef/portfolio-project5).
 
 [Back to top](<#table-of-content>)
 
-### How To Fork 
-
-It is possible to do a independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
-
-1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
-![Fork the Project](documentation/readme_images/fork.jpg)<br><br>
-
-[Back to top](<#table-of-content>)
-
-### Cloning this Project.
-
-To clone and set up this project follow these steps:
-
-1. When you are in the repository, find the code tab and click it.
-2. To the left of the green GitPod button, press the 'code' menu. There you will find a link to the repository. Click on the clipboard icon to copy the URL.
-3. Use an IDE and open Git Bash. Change directory to the location where you want the cloned directory to be made.
-4. Enter the command git clone followed by the copied URL
-5. Your clone was created.
-
-[Back to top](<#contents>)
-
-## Credits
-
-### Content
-* All recipes content and details was taken from this recipes website [Delish](https://www.delish.com/)
-
-### Resources
-* Website inspiration from [Code Institute: Moments Application](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
-
-* Agile methodology inspired from [Knowledgehut](https://www.knowledgehut.com/blog/agile/features-in-agile-methodology).
-
-
-* User stories inspired from [Code Institute: Moments Application](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
-
-* Notification messages inspired from this application [worth-a-trip](https://worth-a-trip-drf-40e2fa952827.herokuapp.com/)
-
-* How to add these notifications is from [DEV](https://dev.to/adyasha8105/react-notifications-33do).
-
-* The API models are inspired from [Code Institute: Django Rest Framework](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DRF+2021_T1/courseware/f775d54df4da44d18309888b3fe884f7/a146472df94c4691951c4f58ac43e30e/)
-
-* Bug number 6 solution resource is from [medium.com](https://bryantson.medium.com/solving-proxy-error-could-not-proxy-request-xxx-from-yyy-from-local-reactjs-app-to-nodejs-app-f28f3548afb9)
-
-
-### Code
-
-* Code of creating profile, posts, authentication components inspired from [Code Institute: Moments](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
-
-
-
-[Back to top](<#contents>)
-
-## Acknowledgements
-This App was completed as a Portfolio Project 5 for the Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank a lot my mentor [Gareth McGirr](https://github.com/Gareth-McGirr), the Slack community and specially tutor support. And all at the Code Institute for their help.
-
-[Back to top](<#contents>)
-
-
-
-
-
-## Deployment
+### Deployment Backend
 The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow these steps:
 
 1. To begin with we need to create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
@@ -663,11 +734,13 @@ Now, add the link to the DATABASE_URL that we added to the environment file earl
 
 [Back to top](<#table-of-content>)
 
+
 ### How To Fork 
 
-It is possible to do an independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
+It is possible to do a independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
 
 1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
+<br>
 
 [Back to top](<#table-of-content>)
 
@@ -681,6 +754,47 @@ To clone and set up this project follow these steps:
 4. Enter the command git clone followed by the copied URL
 5. Your clone was created.
 
+[Back to top](<#contents>)
+
+## Credits
+
+### Content
+* All recipes content and details was taken from this recipes website [Delish](https://www.delish.com/)
+
+### Resources
+* Website inspiration from [Code Institute: Moments Application](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
+
+* Agile methodology inspired from [Knowledgehut](https://www.knowledgehut.com/blog/agile/features-in-agile-methodology).
+
+
+* User stories inspired from [Code Institute: Moments Application](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
+
+* Notification messages inspired from this application [worth-a-trip](https://worth-a-trip-drf-40e2fa952827.herokuapp.com/)
+
+* How to add these notifications is from [DEV](https://dev.to/adyasha8105/react-notifications-33do).
+
+* The API models are inspired from [Code Institute: Django Rest Framework](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DRF+2021_T1/courseware/f775d54df4da44d18309888b3fe884f7/a146472df94c4691951c4f58ac43e30e/)
+
+* Deployment Backend section in Readme file was taken from this [repository](https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md). It was so clear and easy to follow so I take it as is.
+
+* Bug number 6 solution resource is from [medium.com](https://bryantson.medium.com/solving-proxy-error-could-not-proxy-request-xxx-from-yyy-from-local-reactjs-app-to-nodejs-app-f28f3548afb9)
+
+* Bug number 7 solution resource if from [stackoverflow.com](https://stackoverflow.com/questions/54126343/how-to-fix-unchecked-runtime-lasterror-the-message-port-closed-before-a-respon#:~:text=The%20cause%20of%20this%20issue,every%20chrome%20extension%20you%20installed.&text=Norton%20Safe%20Web%20extension%20for,extension%2C%20the%20error%20message%20disappeared.)
+
+### Code
+
+* Code of creating profile, posts, authentication components inspired from [Code Institute: Moments](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
+
+
 
 [Back to top](<#contents>)
+
+## Acknowledgements
+This App was completed as a Portfolio Project 5 for the Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank a lot my mentor [Gareth McGirr](https://github.com/Gareth-McGirr), the Slack community and specially tutor support. And all at the Code Institute for their help.
+
+[Back to top](<#contents>)
+
+
+
+
 
