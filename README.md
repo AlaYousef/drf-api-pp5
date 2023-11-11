@@ -51,10 +51,9 @@
 
 ## Introduction
 
-Healthy website is a social media platform for healthy cooking recipes. This social web app provides users with an opportunity to contact and share information about healthy cooking recipes. This social platform targets users who are interested in healthy cooking recipes. Each user has the ability to share a post with a recipe title, ingredients and recipe directions so others can apply it easily. Users are given the ability also to like, leave comments and bookmarks others recipes.
+Healthy website is a social media platform for healthy cooking recipes. This social web app provides users with an opportunity to contact and share healthy recipes. This social platform targets users who are interested in healthy cooking recipes. Each user has the ability to share a post with a recipe title, ingredients and recipe directions so others can apply it easily. Users are given the ability also to interact with these recipes posts by leaving comments, likes and bookmarks others recipes, and to interact with each others by following each others.
 
-The fully deployed project can be accessed at [Here](https://cooking-pp5-f4e5b26840e2.herokuapp.com/)
-
+The fully deployed project can be accessed at [Here](https://cooking-pp5-f4e5b26840e2.herokuapp.com/).
 
 ## User Experience UX
 
@@ -234,7 +233,7 @@ Methods:
 * POST - Used to create user profile.
 * GET - Used to get a list of profiles.
 
-2. Endpoint: /posts/<int:pk>/
+2. Endpoint: /profiles/<int:pk>/
 
 Methods:
 * GET - Get a single profile.
@@ -255,18 +254,18 @@ Methods:
 * PUT - Used to edit a recipe post.
 * DELETE - Used to delete an recipe post.
 
-**Profiles**
-1. Endpoint: /profiles/
+**Followers**
+1. Endpoint: /followers/
 
 Methods:
-* POST - Used to create user profile.
-* GET - Used to get a list of profiles.
+* POST - Used to create a follow request.
+* GET - Used to get a list of followings.
 
-2. Endpoint: /profiles/<int:pk>/
+2. Endpoint: /followers/<int:pk>/
 
 Methods:
-* GET - Get a single profile.
-* DELETE - Used to delete a profile.
+* GET - Get a single following.
+* DELETE - Used to delete a following.
 
 **Contacts**
 1. Endpoint: /contacts/
@@ -414,7 +413,7 @@ Most Followed Profiles For Logged-in users
 * The dropDown menu has two option, one for editing to edit the recipe and the other for deleting to delete the recipe.
 ![Recipe dropdown menu msg](documentation/readme_images/recipe-dropdown.png)<br>
 
-* When the user click on delete icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/trash-can.svg" width="15" height="15"> a confirmation message box will displyaed for ensuring the user for recipe deletion.
+* When the user click on delete icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/trash-can.svg" width="15" height="15"> a confirmation message box will displayed for ensuring the user for  deletion.
 ![Recipe dropdown delete box](documentation/readme_images/deleteConfirmation.png)<br>
 
 * The recipe will be deleted with a confirmation message " Recipe deleted successfully", when user click on _Delete_ button and the user will be redirected to the previous page. 
@@ -442,20 +441,19 @@ Most Followed Profiles For Logged-in users
 ![Register Page](documentation/readme_images/register2.png)<br>
 
 #### Sign-in Page
-* Users is required to enter username and password to log in.
+* Users are required to enter username and password to log in.
 * After the user enter the required information, the user will redirect to the home page with a confirmation message "Signed in successfully".
-* Once the user logged in, new links in navigation bar will appear; _Feed_, _Bookmarked_,_Sign-out_,_Profile_ and _Contact-us_.
+* Once the user logged in, new links in navigation bar will display; _Feed_, _Bookmarked_,_Sign-out_,_Profile_ and _Contact-us_.
 ![Log-in Page](documentation/readme_images/sign-in1.png)<br>
 
 * Sign in confirmation message.
 ![Log-in Message](documentation/readme_images/sign-in2.png)<br><br>
 
 #### Sign-out Page
-* Users will redirect to the _Home_ page after signing out.
-
+* Users will redirect to the _Home_ page after signing out and the navbar will be changed again.
 
 ### Feed Page
- * Feed page has all recipes posts that posted by other users arranged from newest created one to oldest.
+ * Feed page has all recipes posts that posted by other followed users arranged from newest created one to oldest.
 
 ![Feed Page](documentation/readme_images/feeds.png)<br><br>
 
@@ -468,7 +466,7 @@ Most Followed Profiles For Logged-in users
 
 ### Profile Page
  * Profile page contains informations about the profile owner such as numer of posts, number of users that the owner follow and number of followers that follows this owner.
- * In addition to, this page contains all the posts that the profile owner was created. 
+ * In addition to, this page contains all the posts that the profile owner has created. 
 
 ![Profile Page](documentation/readme_images/profile-page.png)<br><br>
 
@@ -544,9 +542,10 @@ Most Followed Profiles For Logged-in users
 
 ### Future Features
 * The future features that I would like to implement are :
-1. Allow users to share a recipe post with their own followers by clicking on share icon.
+1. Add share icon to allow users to share a recipe post with their own followers.
 2. Notify users when someone other like, comment or starting to follow.
 3. Add sommernote to create recipes form fields.
+3. And finally combine the project with my portfolio project4 somehow to become a full site (backend and frontend) to publish recipes and the possibility of joining a healthy cooking community for those interested in healthy cooking. 
 
 ## Full Testing
 The testing documentation can be found at [TESTING.md](TESTING.md)
@@ -784,7 +783,7 @@ To clone and set up this project follow these steps:
 
 * Bug number 6 solution resource is from [medium.com](https://bryantson.medium.com/solving-proxy-error-could-not-proxy-request-xxx-from-yyy-from-local-reactjs-app-to-nodejs-app-f28f3548afb9)
 
-* Bug number 7 solution resource if from [stackoverflow.com](https://stackoverflow.com/questions/54126343/how-to-fix-unchecked-runtime-lasterror-the-message-port-closed-before-a-respon#:~:text=The%20cause%20of%20this%20issue,every%20chrome%20extension%20you%20installed.&text=Norton%20Safe%20Web%20extension%20for,extension%2C%20the%20error%20message%20disappeared.)
+* Bug number 7 solution resource is from [stackoverflow.com](https://stackoverflow.com/questions/54126343/how-to-fix-unchecked-runtime-lasterror-the-message-port-closed-before-a-respon#:~:text=The%20cause%20of%20this%20issue,every%20chrome%20extension%20you%20installed.&text=Norton%20Safe%20Web%20extension%20for,extension%2C%20the%20error%20message%20disappeared.)
 
 ### Code
 

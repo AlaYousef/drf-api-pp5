@@ -508,7 +508,7 @@ Solution is adding (import jwtDecode from "jwt-decode") in utils.js.
  <br>
 
  ### UnResolved
- * 1. Bug: WebSocketClient.js:13 WebSocket connection to 'wss://3000-alayousef-drfapipp5-bu5sfal23dw.ws-eu106.gitpod.io:3000/ws' failed. I could't fix this error and I have contacted tutor support and said that can ignored and will not affects my marks.
+ * 1. Bug: WebSocketClient.js:13 WebSocket connection to 'wss://3000-alayousef-drfapipp5-bu5sfal23dw.ws-eu106.gitpod.io:3000/ws' failed. I could't fix this error and I have contacted tutor support and said that can be ignored.
  
 [Back to top](<#contents>)
 
