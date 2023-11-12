@@ -49,6 +49,6 @@
   "client": {
    "webSocketURL": { "hostname": "undefined", "pathname": "undefined", "port": "undefined" }
   },
-  "proxy": "http://localhost:8000/"
-  
+  "proxy": "http://localhost:8000/",
+  "secure": false
 }

@@ -509,6 +509,8 @@ Solution is adding (import jwtDecode from "jwt-decode") in utils.js.
 
  ### UnResolved
  * 1. Bug: WebSocketClient.js:13 WebSocket connection to 'wss://3000-alayousef-drfapipp5-bu5sfal23dw.ws-eu106.gitpod.io:3000/ws' failed. I could't fix this error and I have contacted tutor support and said that can be ignored.
+ * 2. Bug: 401 error. In moments walkthrough project said that is a normal and from the api and will not affects project marks.
+ * 3. Warning: "Mixed Content: The page at 'https://8000-alayousef-drfapipp5-bu5sfal23dw.ws-eu106.gitpod.io/feed' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://8000-alayousef-drfapipp5-bu5sfal23dw.ws-eu106.gitpod.io/api/recipes/?owner__followed__owner__profile=1&page=2&search='. This request has been blocked; the content must be served over HTTPS." Could not fix it. It display just when run the app from gitpod but the deplyed one is worked fine (The reasone of this warning is  trying to serve a mix of secure and insecure information ( "http" from the drfapi URL). Tutor support said that is fine does not affect it is just a warning.
  
 [Back to top](<#contents>)
 
