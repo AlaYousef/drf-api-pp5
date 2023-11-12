@@ -53,7 +53,7 @@
 
 Healthy website is a social media platform for healthy cooking recipes. This social web app provides users with an opportunity to contact and share healthy recipes. This social platform targets users who are interested in healthy cooking recipes. Each user has the ability to share a post with a recipe title, ingredients and recipe directions so others can apply it easily. Users are given the ability also to interact with these recipes posts by leaving comments, likes and bookmarks others recipes, and to interact with each others by following each others.
 
-The fully deployed project can be accessed at [Here](https://cooking-pp5-f4e5b26840e2.herokuapp.com/).
+The fully deployed project can be accessed at [Here](https://cooking-api-pp5-c09a661185b7.herokuapp.com/).
 
 ## User Experience UX
 
@@ -525,7 +525,8 @@ Most Followed Profiles For Logged-in users
 <br><br>
 
 ### Reusable React Components
-* I have reuse in my project some components which I learned about and applied through Moments walkthrough project which are: 
+* In my project I have reuse some components which I learned about and applied through Moments walkthrough project which are: 
+
 1. Three Dots Dropdown Menu
 * The MoreDropdown component provides a dropdown menu represented by the three dots ```...``` vertically. Used to add more functionality and provide the ability to users to edit and delete their recipes posts and comments, by adding _Edit_ and _Delete_ icons in this menu.
 * And used in profile to handle profiles actions like _edit profile_, _change username_ and _change password_ options.
@@ -539,6 +540,7 @@ Most Followed Profiles For Logged-in users
 4. React Infinite Scroll
 * Used to load more contents instead of pagenation that can be somewhat annoying to users.
 
+In addition to profiles, likes, comments and auth pages.
 
 ### Future Features
 * The future features that I would like to implement are :
@@ -595,7 +597,11 @@ The testing documentation can be found at [TESTING.md](TESTING.md)
 * [gunicorn](https://pypi.org/project/gunicorn/) - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX. It’s a pre-fork worker model ported from Ruby’s Unicorn project. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resource usage, and fairly speedy.
 * [sqlparse](https://pypi.org/project/sqlparse/) - sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements.
 * [python3-openid](https://pypi.org/project/python3-openid/) - OpenID support for modern servers and consumers.
-* [requests-oauhlib](https://pypi.org/project/requests-oauthlib/) - P    rovides first-class OAuth library support for Requests.
+* [requests-oauhlib](https://pypi.org/project/requests-oauthlib/) - Provides first-class OAuth library support for Requests.
+*[react-notifications](https://dev.to/adyasha8105/react-notifications-33do) - Provide message notification alerts users on creating, editing and deleting. 
+*[react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) - Used to make all infinite scrolling in the app on loading recipes and comments.
+*[jwt-decode](https://jwt.io/) - Used to decode an encoded JWT Token. 
+*[axios](https://www.npmjs.com/package/axios) - Used to implement some promise-based asynchronous HTTP requests.
 
 ## Deployment
 
@@ -611,7 +617,7 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 3. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
 
-The live link to the 'Healthy' site on Heroku can be found [here](https://cooking-pp5-f4e5b26840e2.herokuapp.com/). And the Github repository can be found [here](https://github.com/AlaYousef/portfolio-project5).
+The live link to the 'Healthy' site on Heroku can be found [here](https://cooking-api-pp5-c09a661185b7.herokuapp.com/). And the Github repository can be found [here](https://github.com/AlaYousef/portfolio-project5).
 
 [Back to top](<#table-of-content>)
 
